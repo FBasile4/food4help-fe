@@ -1,0 +1,21 @@
+mat-toolbar-toolbar{
+  height: 60px;
+  color: darkgreen;
+  display: initial;
+}
+
+button-accedi{
+  color: darkgreen;
+  font-size: 40px;
+}
+.spacer{
+  flex: 1 1 auto;
+}
+img{
+  width: 1536px;
+  height: 627px;
+}
+
+
+
+

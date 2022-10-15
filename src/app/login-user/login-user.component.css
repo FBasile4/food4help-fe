@@ -1,0 +1,48 @@
+mat-toolbar-toolbar{
+  height: 60px;
+  color: darkgreen;
+  display: initial;
+}
+
+button-accedi{
+  color: darkgreen;
+  font-size: 40px;
+}
+.spacer{
+  flex: 1 1 auto;
+}
+/*---------------*/
+.access{
+  display: flex;
+  justify-content: center;
+}
+p{
+  display: flex;
+  justify-content: center;
+  gap:90px;
+  font-style: italic;
+}
+.form-email {
+  display: flex;
+  justify-content: center;
+}
+.form-password{
+  display: flex;
+  justify-content: center;
+}
+.accessoB{
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+img{
+  width: 30px;
+}
+.iconS{
+  width: 180px;
+}
+.accesso{
+  color: white;
+  background: darkgreen;
+}
+

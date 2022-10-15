@@ -1,0 +1,24 @@
+<mat-toolbar class="toolbar">
+  <button  mat-button [matMenuTriggerFor] ="menuHome">
+    <mat-icon>list</mat-icon>
+  </button>
+  <mat-menu #menuHome="matMenu" yPosition="below" xPosition="after">
+    <button mat-menu-item routerLink="home">
+      Home
+    </button>
+  </mat-menu>
+  <span class="spacer"></span>
+  <button>
+    <mat-icon>search</mat-icon>
+  </button>
+  <nav>
+    <a routerLink="login">
+      <button class="accedi">Accedi</button>
+    </a>
+  </nav>
+  <router-outlet></router-outlet>
+</mat-toolbar>
+
+<img  class="food-image-home" src="https://www.informacibo.it/wp-content/uploads/2020/02/123096903_s.jpg">
+
+
