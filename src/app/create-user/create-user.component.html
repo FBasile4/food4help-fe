@@ -1,0 +1,58 @@
+<h3>Create UTENTE</h3>
+<div [hidden]="submitted" style="width: 300px;">
+  <form >
+    <div class="form-group">
+      <div class="form-name">
+        <label >Nome</label>
+        <mat-form-field appearance="fill">
+          <mat-label> </mat-label>
+          <input matInput type="text" name="name "required [(ngModel)]="user.name" />
+        </mat-form-field>
+      </div>
+
+      <label >NomeCEO</label>
+      <div class="form-nameCEO">
+        <mat-form-field appearance="fill">
+          <mat-label> </mat-label>
+          <input matInput [(ngModel)]="user.nameCEO" required name="nameCEO"/>
+        </mat-form-field>
+      </div>
+
+      <label >Email</label>
+      <div class="form-email">
+        <mat-form-field appearance="fill">
+          <mat-label> </mat-label>
+          <input matInput placeholder="prova@gmail.com" name="email" [(ngModel)]="user.email" required />
+        </mat-form-field>
+      </div>
+
+      <label >Indirizzo</label>
+      <div class="form-address">
+        <mat-form-field appearance="fill">
+          <mat-label> </mat-label>
+          <input matInput  [(ngModel)]="user.address" name="address" required />
+        </mat-form-field>
+      </div>
+
+      <label >Password</label>
+      <div class="form-password">
+        <mat-form-field appearance="fill">
+          <mat-label> </mat-label>
+          <input matInput placeholder="******"[(ngModel)]="user.password"  name="password" required />
+        </mat-form-field>
+      </div>
+
+      <label >Telefono</label>
+      <div class="form-phone">
+        <mat-form-field appearance="fill">
+          <mat-label> </mat-label>
+          <input matInput  [(ngModel)]="user.phone" name="phone" required />
+        </mat-form-field>
+      </div>
+
+    </div>
+    <button (click)="onSubmit()" class="btn btn-success">Registrati</button>
+  </form>
+</div>
+
+
