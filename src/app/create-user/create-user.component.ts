@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { DialogCreateComponent } from '../dialog-create/dialog-create.component';
 import { User } from '../user';
 import { UserServiceService } from '../user-service/user-service.service';
@@ -17,7 +18,7 @@ export class CreateUserComponent implements OnInit {
   user: User = new User();
   submitted = false;
 
-  constructor(private userService: UserServiceService, public dialog: MatDialog){}
+  constructor(private userService: UserServiceService, public dialog: MatDialog, public router: Router ){}
 
   ngOnInit(): void {  }
 
@@ -36,6 +37,7 @@ export class CreateUserComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.save();
+    this.router.navigate(['home']);
   }
 
 

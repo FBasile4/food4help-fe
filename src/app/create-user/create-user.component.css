@@ -1,4 +1,75 @@
-button{
+mat-toolbar-toolbar{
+  height: 60px;
+  color: darkgreen;
+  display: initial;
+}
+
+button-accedi{
+  color: darkgreen;
+  font-size: 40px;
+}
+.spacer{
+  flex: 1 1 auto;
+}
+
+/*-----------------------*/
+.table{
+  display: flex;
+  justify-content: center;
+  font-size: larger;
+}
+tr{
+  display: flex;
+  gap: 52px;
+}
+
+h3{
+  display: flex;
+  justify-content: flex-start;
+}
+.buttonRegistra{
+  display: flex;
+  justify-content: flex-end;
+}
+.registrati{
   color: white;
   background: darkgreen;
+  font-size: initial;
 }
+
+.form-name{
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+}
+
+.form-nameCEO{
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+}
+
+.form-email{
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+}
+
+.form-address{
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+}
+
+.form-password{
+   display: flex;
+   justify-content: center;
+   gap: 90px;
+ }
+
+.form-phone{
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+}
+
