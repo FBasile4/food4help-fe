@@ -2,9 +2,9 @@ import { Component,  OnInit } from '@angular/core';
 import {Location} from '@angular/common';
 import { FormControl, Validators } from '@angular/forms';
 import { MatFormFieldControl } from '@angular/material/form-field';
-import { User } from '../user/user';
-import { UserServiceService } from '../user/user-service/user-service.service';
+
 import { Observable } from 'rxjs';
+import { UserServiceService } from '../user-service/user-service.service';
 
 @Component({
   selector: 'app-login-user',
@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./login-user.component.css']
 })
 export class LoginUserComponent implements OnInit {
+
 
   constructor(private _location: Location, private userService: UserServiceService) {  }
     email = new FormControl('', [Validators.required, Validators.email]);
@@ -34,8 +35,16 @@ export class LoginUserComponent implements OnInit {
 
   checkAccess(): void{
     console.log("Login component");
-      this.userService.loginUser(this.email,this.password);
+      this.userService.loginUser(this.email,this.password).subscribe(
+        data => {
+          console.log(JSON.stringify(data));
+        }
+
+      );
+
   }
+
+
 
 
 }

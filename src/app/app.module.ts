@@ -11,12 +11,16 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {MatDialogModule} from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SearchUsersComponent } from './search-users/search-users.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { HomeComponent } from './home/home.component';
 import { WorkingActivityHomeComponent } from './working-activity-home/working-activity-home.component';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { DialogCreateComponent } from './dialog-create/dialog-create.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,9 @@ import { WorkingActivityHomeComponent } from './working-activity-home/working-ac
     SearchUsersComponent,
     LoginUserComponent,
     HomeComponent,
-    WorkingActivityHomeComponent
+    WorkingActivityHomeComponent,
+    CreateUserComponent,
+    DialogCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,9 @@ import { WorkingActivityHomeComponent } from './working-activity-home/working-ac
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

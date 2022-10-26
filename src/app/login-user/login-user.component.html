@@ -6,6 +6,9 @@
     <button mat-menu-item (click)="backHome()">
       Home
     </button>
+    <button mat-menu-item routerLink="register">
+      Registrazione
+    </button>
   </mat-menu>
   <span class="spacer"></span>
   <button>
@@ -34,14 +37,14 @@
 
 <div class="form-password">
   <mat-form-field appearance="fill">
-    <mat-label>Enter your password</mat-label>
+    <mat-label>Password</mat-label>
     <input matInput [type]="hide ? 'password' : 'text'">
     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </button>
   </mat-form-field>
 </div>
-<p>Non sei ancora registrato? <span class="space"></span> Hai dimenticato la password?</p>
+<p  routerLink="register">Non sei ancora registrato? <span class="space"></span> Hai dimenticato la password?</p>
 
 <div class="accessoB">
   <img src="assets/cdnlogo.com_google-icon.svg">
