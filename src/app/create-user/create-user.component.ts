@@ -39,6 +39,13 @@ export class CreateUserComponent implements OnInit {
     this.save();
     this.router.navigate(['home']);
   }
+  login(){
+    this.router.navigate(['home/login']);
+  }
+  backHome() {
+    //this._location.back();
+    this.router.navigate(['home']);
+  }
 
 
 }

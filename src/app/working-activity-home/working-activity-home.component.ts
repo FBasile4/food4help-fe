@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from '../user';
 
 @Component({
   selector: 'app-working-activity-home',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkingActivityHomeComponent implements OnInit {
 
-  constructor() { }
+  user: User;
+  
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  backHome(){
+    this.router.navigate(['home']);
+  }
+  reservations(){
+
+  }
+
+  box(){
+    
   }
 
 }

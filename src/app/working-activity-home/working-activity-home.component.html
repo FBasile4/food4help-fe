@@ -1,1 +1,34 @@
+<mat-toolbar class="toolbar">
+  <button  mat-button [matMenuTriggerFor] ="menuHome">
+    <mat-icon>list</mat-icon>
+  </button>
+  <mat-menu #menuHome="matMenu" yPosition="below" xPosition="after">
+    <button mat-menu-item (click)="backHome()">
+      Home
+    </button>
+    <button mat-menu-item (click)="reservations()" >
+      Prenotazioni
+    </button>
+    <button mat-menu-item (click)="box()" >
+      Box pubblicate
+    </button>
+    <button mat-menu-item (click)="backHome()">
+      Logout
+    </button>
+  </mat-menu>
+  <span class="spacer"></span>
+  <button mat-button>
+    <mat-icon>search</mat-icon>
+  </button>
+  <nav>
+    <a>
+      <button mat-button class="accedi">Ciaoo {{user}}</button>
+    </a>
+  </nav>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
+<!--                           -->
+
 <p>working-activity-home works!</p>

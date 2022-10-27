@@ -4,9 +4,8 @@ mat-toolbar-toolbar{
   display: initial;
 }
 
-button-accedi{
+.accedi{
   color: darkgreen;
-  font-size: 40px;
 }
 .spacer{
   flex: 1 1 auto;

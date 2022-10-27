@@ -3,7 +3,7 @@
     <mat-icon>list</mat-icon>
   </button>
   <mat-menu #menuHome="matMenu" yPosition="below" xPosition="after">
-    <button mat-menu-item >
+    <button mat-menu-item  (click)="backHome()">
       Home
     </button>
     <button mat-menu-item routerLink="register">
@@ -11,12 +11,12 @@
     </button>
   </mat-menu>
   <span class="spacer"></span>
-  <button>
+  <button mat-button>
     <mat-icon>search</mat-icon>
   </button>
   <nav>
-    <a routerLink="login">
-      <button class="accedi">Accedi</button>
+    <a (click)="login()">
+      <button mat-button class="accedi">Accedi</button>
     </a>
   </nav>
 </mat-toolbar>
