@@ -12,7 +12,7 @@
   </mat-menu>
   <span class="spacer"></span>
   <button mat-button>
-    <mat-icon>search</mat-icon>
+    <mat-icon (click)="searchUsers()">search</mat-icon>
   </button>
   <nav>
     <a (click)="login()">
@@ -21,7 +21,7 @@
   </nav>
 </mat-toolbar>
 
-<h3> Registrazione utente </h3> <br> <br>
+<h3> Registrazione utente: </h3> <br> <br>
 <div [hidden]="submitted" class="table" >
 
     <div class="form-group">
@@ -94,10 +94,10 @@
           </td>
         </tr>
       </table>
-      <div class="buttonRegistra">
-        <button class="registrati"  routerLink="home" (click)="onSubmit()" >Registrati</button>
-      </div>
     </div>
+  <div class="buttonRegistra">
+    <button class="registrati"  routerLink="home" (click)="onSubmit()" >Registrati</button>
+  </div>
 </div>
 
 

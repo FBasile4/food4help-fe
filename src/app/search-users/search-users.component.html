@@ -1,1 +1,44 @@
-<p>search-users works!</p>
+<div class="toolbar">
+<mat-toolbar class="toolbar">
+  <button  mat-button [matMenuTriggerFor] ="menuHome">
+    <mat-icon>list</mat-icon>
+  </button>
+  <mat-menu #menuHome="matMenu" yPosition="below" xPosition="after">
+    <button mat-menu-item (click)="backHome()">
+      Home
+    </button>
+    <button mat-menu-item (click)="register()" routerLink="home/register">
+      Registrazione
+    </button>
+  </mat-menu>
+  <span class="spacer"></span>
+  <button mat-button>
+    <mat-icon>search</mat-icon>
+  </button>
+  <nav>
+    <a (click)="login()">
+      <button mat-button class="accedi">Accedi</button>
+    </a>
+  </nav>
+</mat-toolbar>
+</div>
+<router-outlet></router-outlet>
+
+<!--------------------------------->
+<div class="page-search">
+<h3 class="text">Cerca:</h3>
+<form (ngSubmit)="onSubmit()">
+  <div class="form-search">
+    <input class="input-work" id="name" required [(ngModel)]="name" name="name">
+    <button mat-raised-button type="submit" class="ricerca">Ricerca</button>
+  </div>
+</form>
+  <div class="results">
+    <ul>
+      <li *ngFor="let user of userList">
+        Risultati trovati:
+        <h4>{{user.id}} - {{user.name}} </h4>
+      </li>
+    </ul>
+  </div>
+</div>

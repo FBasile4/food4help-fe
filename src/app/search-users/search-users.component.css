@@ -1,0 +1,44 @@
+mat-toolbar-toolbar{
+  height: 60px;
+  color: darkgreen;
+  display: initial;
+}
+
+.accedi{
+  color: darkgreen;
+}
+.spacer{
+  flex: 1 1 auto;
+}
+/*---------------*/
+h3{
+  color: darkgreen;
+  font-size: 24px;
+}
+.ricerca{
+  color: white;
+  background: darkgreen;
+}
+.form-search{
+  display: flex;
+  gap: 50px;
+  position:absolute;
+  top:210px;
+  left:39px;
+}
+.text{
+  position:absolute;
+  top:130px;
+  left:39px;
+}
+.input-work{
+  min-width: 600px;
+  max-width: 700px;
+  width: 100%;
+}
+.results{
+  position:absolute;
+  top:268px;
+  left:15px;
+  font-size: 18px;
+}

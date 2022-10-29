@@ -32,6 +32,9 @@ export class LoginUserComponent implements OnInit {
   register(){
     this.router.navigate(['home/register']);
   }
+  searchUsers(){
+    this.router.navigate(['home/searchUsers']);
+  }
 
   getErrorMessageEmail() {
     if (this.email.hasError('required')) {
@@ -43,6 +46,7 @@ export class LoginUserComponent implements OnInit {
 
   checkAccess(): void{
     console.log("Login component", this.email, this.password);
+    this.email.value == this.user.email
       this.userService.loginUser(this.user).subscribe(
         data => console.log(data), error => console.log(error));
     this.router.navigate(['home/workingActivity']);

@@ -23,8 +23,11 @@ tr{
 }
 
 h3{
-  display: flex;
-  justify-content: flex-start;
+  position:absolute;
+  top:130px;
+  left:39px;
+  color: darkgreen;
+  font-size: 24px;
 }
 .buttonRegistra{
   display: flex;
@@ -34,8 +37,17 @@ h3{
   color: white;
   background: darkgreen;
   font-size: initial;
+  position:absolute;
+  bottom: 167px;
+  left: 1104px;
 }
 
+.form-group{
+  display: flex;
+  justify-content: center;
+  position:absolute;
+  bottom: 210px;
+}
 .form-name{
   display: flex;
   justify-content: center;

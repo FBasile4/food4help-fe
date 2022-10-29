@@ -46,6 +46,9 @@ export class CreateUserComponent implements OnInit {
     //this._location.back();
     this.router.navigate(['home']);
   }
+  searchUsers(){
+    this.router.navigate(['home/searchUsers']);
+  }
 
 
 }

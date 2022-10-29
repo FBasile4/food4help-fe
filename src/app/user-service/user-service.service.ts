@@ -26,4 +26,8 @@ export class UserServiceService {
     return this.http.post(`${this.baseUrl}` + `/home/login`, user);
     console.log(user);
   }
+
+  getUsersByName(name: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/users/name/${name}`);
+  }
 }
