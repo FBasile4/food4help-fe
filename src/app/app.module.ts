@@ -13,6 +13,10 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+
 
 import { AppComponent } from './app.component';
 import { SearchUsersComponent } from './search-users/search-users.component';
@@ -20,7 +24,7 @@ import { LoginUserComponent } from './login-user/login-user.component';
 import { HomeComponent } from './home/home.component';
 import { WorkingActivityHomeComponent } from './working-activity-home/working-activity-home.component';
 import { CreateUserComponent } from './create-user/create-user.component';
-import { DialogCreateComponent } from './dialog-create/dialog-create.component';
+import { DialogBoxSummaryComponent } from './dialog-box-summary/dialog-box-summary.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,7 @@ import { DialogCreateComponent } from './dialog-create/dialog-create.component';
     HomeComponent,
     WorkingActivityHomeComponent,
     CreateUserComponent,
-    DialogCreateComponent
+    DialogBoxSummaryComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,9 @@ import { DialogCreateComponent } from './dialog-create/dialog-create.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    MatRadioModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

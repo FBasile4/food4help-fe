@@ -1,4 +1,4 @@
-mat-toolbar-toolbar{
+mat-toolbar toolbar{
   height: 60px;
   color: darkgreen;
   display: initial;
@@ -10,4 +10,86 @@ mat-toolbar-toolbar{
 .spacer{
   flex: 1 1 auto;
 }
-/*---------------*/
+
+/*-----------------------*/
+h3{
+  position:absolute;
+  top:130px;
+  left:39px;
+  color: darkgreen;
+  font-size: 24px;
+}
+.form{
+  position:absolute;
+  top:190px;
+  left:355px;
+  color: black;
+  font-size: 24px;
+}
+.form-type{
+  display: flex;
+  gap: 72px;
+}
+.input-type {
+  min-width: 600px;
+  max-width: 700px;
+  width: 100%;
+}
+.form-weigth{
+  display: flex;
+  gap: 30px;
+}
+.input-weigth{
+  min-width: 600px;
+  max-width: 700px;
+  width: 100%;
+}
+.form-details{
+  display: flex;
+  gap: 26px;
+}
+.input-details{
+  min-width: 600px;
+  max-width: 700px;
+  width: 100%;
+}
+.form-phone{
+  display: flex;
+  gap: 23px;
+}
+.input-phone{
+  min-width: 600px;
+  max-width: 700px;
+  width: 100%;
+}
+.form-email{
+  display: flex;
+  gap: 106px;
+}
+.input-email{
+  min-width: 600px;
+  max-width: 700px;
+  width: 100%;
+}
+.form-zone{
+  display: flex;
+  gap: 59px;
+}
+.input-zone{
+  min-width: 600px;
+  max-width: 700px;
+  width: 100%;
+}
+.buttonCreate{
+  display: flex;
+  justify-content: flex-end;
+}
+.create{
+  color: white;
+  background: darkgreen;
+  font-size: initial;
+  position:absolute;
+  bottom: 87px;
+  left: 1091px;
+}
+

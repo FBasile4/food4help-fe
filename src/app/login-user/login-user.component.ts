@@ -36,6 +36,9 @@ export class LoginUserComponent implements OnInit {
     this.router.navigate(['home/searchUsers']);
   }
 
+  goWorkingAct(){
+    this.router.navigate(['home/workingActivity']);
+  }
   getErrorMessageEmail() {
     if (this.email.hasError('required')) {
       return 'You must enter a value';

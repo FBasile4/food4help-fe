@@ -84,3 +84,14 @@ h3{
   gap: 90px;
 }
 
+.form-type{
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+}
+.mat-radio-group{
+  display: flex;
+  gap: 30px;
+}
+
+

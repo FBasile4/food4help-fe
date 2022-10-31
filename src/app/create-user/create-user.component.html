@@ -93,10 +93,21 @@
             </div>
           </td>
         </tr>
+        <tr>
+          <td>
+            <div class="form-type">
+              <label >Tipologia</label>
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Ente benefico</mat-radio-button>
+                <mat-radio-button value="2">Attività lavorativa</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </td>
+        </tr>
       </table>
     </div>
   <div class="buttonRegistra">
-    <button class="registrati"  routerLink="home" (click)="onSubmit()" >Registrati</button>
+    <button class="registrati"  routerLink="home" mat-stroked-button (click)="openSnackBar()" (click)="onSubmit()" >Registrati</button>
   </div>
 </div>
 

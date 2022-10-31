@@ -1,9 +1,10 @@
+<div class="toolbar">
 <mat-toolbar class="toolbar">
   <button  mat-button [matMenuTriggerFor] ="menuHome">
     <mat-icon>list</mat-icon>
   </button>
   <mat-menu #menuHome="matMenu" yPosition="below" xPosition="after">
-    <button mat-menu-item (click)="backHome()">
+    <button mat-menu-item (click)="stayHome()">
       Home
     </button>
     <button mat-menu-item (click)="reservations()" >
@@ -22,13 +23,50 @@
   </button>
   <nav>
     <a>
-      <button mat-button class="accedi">Ciaoo {{user}}</button>
+      <button mat-button class="accedi">Ciao! {{user}}</button>
     </a>
   </nav>
 </mat-toolbar>
-
 <router-outlet></router-outlet>
-
+</div>
 <!--                           -->
+<div class="page">
+  <h3> Nuova box: </h3>
+  <div class="form">
+    <div class="form-type">
+      <label>Tipologia:</label>
+      <input class="input-type" id="type" required name="type">
+    </div>
+    <br>
+    <div class="form-weigth">
+      <label>Peso complessivo:</label>
+      <input class="input-weigth" id="weigth" required name="weigth">
+    </div>
+    <br>
+    <div class="form-details">
+      <label>Dettagli contenuto:</label>
+      <input class="input-details" id="details" required name="details">
+    </div>
+    <br>
+    <div class="form-phone">
+      <label>Numero di telefono</label>
+      <input class="input-phone" id="phone" required name="phone">
+    </div>
+    <br>
+    <div class="form-email">
+      <label>Email:</label>
+      <input class="input-email" id="email" required name="email">
+    </div>
+    <br>
+    <div class="form-zone">
+      <label>Sede del ritiro:</label>
+      <input class="input-zone" id="zone" required name="zone">
+    </div>
+  </div>
 
-<p>working-activity-home works!</p>
+  <div class="buttonCreateBox">
+    <button class="create" (click)="openSummary()">Crea Box</button>
+  </div>
+</div>
+
+
