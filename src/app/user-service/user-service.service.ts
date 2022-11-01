@@ -12,6 +12,8 @@ export class UserServiceService {
   private baseUrl = 'http://localhost:8080/api/v1'; /*contiene la baseUrl corrispondente con il be*/
 
 
+  user: User=new User();
+
   constructor(private http: HttpClient) {  }
 
   getUsersList(): Observable<any> {
@@ -22,9 +24,10 @@ export class UserServiceService {
     return this.http.post(`${this.baseUrl}` + `/home/register`, user);
   }
 
-  loginUser(user: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}` + `/home/login`, user);
-    console.log(user);
+  loginUser(userpwd: string): Observable<any> {
+    userpwd = this.user.name + this.user.password;
+    return this.http.get(`${this.baseUrl}/home/login/${userpwd}`);
+    console.log(userpwd);
   }
 
   getUsersByName(name: string): Observable<any> {

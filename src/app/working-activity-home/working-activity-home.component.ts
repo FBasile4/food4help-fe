@@ -10,13 +10,11 @@ import { User } from '../user';
   styleUrls: ['./working-activity-home.component.css']
 })
 export class WorkingActivityHomeComponent implements OnInit {
-
-  user: User;
+  
 
   constructor(private router: Router, public dialog: MatDialog) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {  }
 
   backHome(){
     this.router.navigate(['home']);
@@ -35,6 +33,5 @@ export class WorkingActivityHomeComponent implements OnInit {
   openSummary(){
     this.dialog.open(DialogBoxSummaryComponent);
   }
-  //CREARE DIALOG RIEPILOGO BOX!
 
 }

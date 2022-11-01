@@ -38,7 +38,7 @@
 <div class="form-password">
   <mat-form-field appearance="fill">
     <mat-label>Password</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'" required>
+    <input matInput [type]="hide ? 'password' : 'text'" required [formControl]="password">
     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </button>
@@ -48,7 +48,9 @@
 
 <div class="accessoB">
   <img src="assets/cdnlogo.com_google-icon.svg">
-  <button class="accesso" (click)="checkAccess()" (click)="goWorkingAct()" mat-raised-button>Accedi</button>
+  <button class="accesso" *ngIf=" !isLog else error " (click)="checkAccess()" (click)="goWorkingAct()" mat-raised-button>Accedi</button>
+  <ng-template #error (click)="openSnackBar()"> </ng-template>
 </div>
+
 
 
