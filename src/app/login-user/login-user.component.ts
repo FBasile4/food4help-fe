@@ -45,6 +45,10 @@ export class LoginUserComponent implements OnInit {
   goWorkingAct(){
     this.router.navigate(['home/workingActivity']);
   }
+
+  stayLogin(){
+    this.router.navigate(['home/login']);
+  }
   //-------------------
 
   getErrorMessageEmail() {
@@ -58,22 +62,28 @@ export class LoginUserComponent implements OnInit {
   checkAccess(): void{
     console.log("Email", this.email.value);
     console.log("Password", this.password.value);
-    if(this.email.value != ' '){
-      if(this.password.value != null){
+    if(this.email.value !== ' '){
+      if(this.password.value !== ' '){
         this.userpwd = this.email.value + '_' + this.password.value;
-        console.log(this.userpwd);
         this.userService.loginUser(this.userpwd).subscribe(
-          userpwd => console.log(this.userpwd), error => console.log(error));
-        this.router.navigate(['home/workingActivity']);
+          userpwd => {
+              if(userpwd !== null){
+                console.log(userpwd);
+                this.goWorkingAct();
+              }else{
+                console.log('Nessun utente presente nel DB');
+                this.openSnackBar();
+              }
+            },
+            error => console.log(error)
+        );
       }
-    }else{
-      this.openSnackBar();
     }
   }
 
   openSnackBar() {
-    this._snackBar.open('Inserire e-mail e password', 'X', {
-      duration: 60000,
+    this._snackBar.open('I dati inseriti sono errati', 'X', {
+      duration: 6000,
       verticalPosition: 'top',
     });
   }

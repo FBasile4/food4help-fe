@@ -46,11 +46,11 @@
 </div>
 <p  (click)="register()">Non sei ancora registrato? <span class="space"></span> Hai dimenticato la password?</p>
 
-<div class="accessoB">
+<div class="accessoB" >
   <img src="assets/cdnlogo.com_google-icon.svg">
-  <button class="accesso" *ngIf=" !isLog else error " (click)="checkAccess()" (click)="goWorkingAct()" mat-raised-button>Accedi</button>
-  <ng-template #error (click)="openSnackBar()"> </ng-template>
+  <button class="accesso" (click)="checkAccess()" mat-raised-button>Accedi </button>
 </div>
+
 
 
 

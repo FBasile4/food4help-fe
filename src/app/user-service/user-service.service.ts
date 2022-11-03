@@ -12,7 +12,7 @@ export class UserServiceService {
   private baseUrl = 'http://localhost:8080/api/v1'; /*contiene la baseUrl corrispondente con il be*/
 
 
-  user: User=new User();
+  user: User;
 
   constructor(private http: HttpClient) {  }
 
@@ -25,12 +25,15 @@ export class UserServiceService {
   }
 
   loginUser(userpwd: string): Observable<any> {
-    userpwd = this.user.name + this.user.password;
     return this.http.get(`${this.baseUrl}/home/login/${userpwd}`);
-    console.log(userpwd);
+    if(this.http.get(`${this.baseUrl}/home/login/${userpwd}`) === null){
+      userpwd = '';
+      console.log('Utente a NULL');
+    }
   }
 
   getUsersByName(name: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/users/name/${name}`);
   }
+
 }
