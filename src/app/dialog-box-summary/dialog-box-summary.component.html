@@ -1,12 +1,12 @@
 <h1 mat-dialog-title>Riepilogo box:</h1>
 <div mat-dialog-content>
-  Tipologia:
+  Tipologia: {{type}}
 </div>
 <div mat-dialog-content>
-  Peso complessivo:
+  Peso complessivo: {{weight}}
 </div>
 <div mat-dialog-content>
-  Dettagli contenuto:
+  Dettagli contenuto: {{description}}
 </div>
 <div mat-dialog-content>
   Numero di telefono:
@@ -15,12 +15,13 @@
   E-mail:
 </div>
 <div mat-dialog-content>
-  Sede del ritiro:
+  Sede del ritiro: {{owner}}
 </div>
 <div mat-dialog-content>
   <p class="question">Sei sicuro di voler confermare la creazione della box?</p>
 </div>
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close>Indietro</button>
-  <button class=" publish"mat-button mat-dialog-close>Pubblica</button>
+  <!--LA CREAZIONE DELLA BOX DEVE AVVENIRE QUA COME FARE???????-->
+  <button class="publish" mat-button mat-dialog-close>Pubblica</button>
 </div>

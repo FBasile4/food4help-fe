@@ -10,7 +10,7 @@
     <button mat-menu-item (click)="reservations()" >
       Prenotazioni
     </button>
-    <button mat-menu-item (click)="box()" >
+    <button mat-menu-item (click)="boxPublished()" >
       Box pubblicate
     </button>
     <button mat-menu-item (click)="backHome()">
@@ -35,17 +35,17 @@
   <div class="form">
     <div class="form-type">
       <label>Tipologia:</label>
-      <input class="input-type" id="type" required name="type">
+      <input class="input-type" id="type" [(ngModel)]="box.type" required name="type">
     </div>
     <br>
     <div class="form-weigth">
       <label>Peso complessivo:</label>
-      <input class="input-weigth" id="weigth" required name="weigth">
+      <input class="input-weight" id="weight" [(ngModel)]="box.weight" required name="weigth">
     </div>
     <br>
     <div class="form-details">
       <label>Dettagli contenuto:</label>
-      <input class="input-details" id="details" required name="details">
+      <input class="input-details" id="details" [(ngModel)]="box.description" required name="details">
     </div>
     <br>
     <div class="form-phone">
@@ -60,12 +60,12 @@
     <br>
     <div class="form-zone">
       <label>Sede del ritiro:</label>
-      <input class="input-zone" id="zone" required name="zone">
+      <input class="input-owner" id="owner" [(ngModel)]="box.owner" required name="owner">
     </div>
   </div>
 
   <div class="buttonCreateBox">
-    <button class="create" (click)="openSummary()">Crea Box</button>
+    <button class="create" (click)="addBox()">Crea Box</button>
   </div>
 </div>
 

@@ -98,8 +98,8 @@
             <div class="form-type">
               <label >Tipologia</label>
               <mat-radio-group aria-label="Select an option">
-                <mat-radio-button value="1">Ente benefico</mat-radio-button>
-                <mat-radio-button value="2">Attività lavorativa</mat-radio-button>
+                <mat-radio-button value="charity" (change)="onItemChange1($event)">Ente benefico</mat-radio-button>
+                <mat-radio-button value="workingActivity" (change)="onItemChange2($event)">Attività lavorativa</mat-radio-button>
               </mat-radio-group>
             </div>
           </td>

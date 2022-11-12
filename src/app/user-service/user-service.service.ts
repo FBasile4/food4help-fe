@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { User } from '../user';
 
 @Injectable({
@@ -11,7 +10,6 @@ export class UserServiceService {
 
   private baseUrl = 'http://localhost:8080/api/v1'; /*contiene la baseUrl corrispondente con il be*/
 
-
   user: User;
 
   constructor(private http: HttpClient) {  }
@@ -20,8 +18,12 @@ export class UserServiceService {
     return this.http.get(`${this.baseUrl}`);
   }
 
-  createUser(user: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}` + `/home/register`, user);
+  createUserCharity(user: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}` + `/home/charity/create`, user);
+  }
+
+  createUserWorkingActivity(user: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}` + `/home/workingActivity/create`, user);
   }
 
   loginUser(userpwd: string): Observable<any> {

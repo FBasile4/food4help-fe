@@ -25,7 +25,7 @@ export class SearchUsersComponent implements OnInit {
     this.router.navigate(['home']);
   }
   register(){
-    this.router.navigate(['home/register']);
+    this.router.navigate(['home/charity/create']);
   }
   login(){
     this.router.navigate(['home/login']);

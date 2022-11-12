@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { LoginUserComponent } from './login-user/login-user.component';
 
 
 @Component({
@@ -10,6 +9,6 @@ import { LoginUserComponent } from './login-user/login-user.component';
 export class AppComponent {
   title = 'food4help-fe';
   description = 'Angular-SpringBoot';
-  
+
 
 }

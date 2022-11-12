@@ -15,6 +15,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 
 
@@ -25,6 +26,7 @@ import { HomeComponent } from './home/home.component';
 import { WorkingActivityHomeComponent } from './working-activity-home/working-activity-home.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { DialogBoxSummaryComponent } from './dialog-box-summary/dialog-box-summary.component';
+import { BoxPublishedComponent } from './box-published/box-published.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { DialogBoxSummaryComponent } from './dialog-box-summary/dialog-box-summa
     HomeComponent,
     WorkingActivityHomeComponent,
     CreateUserComponent,
-    DialogBoxSummaryComponent
+    DialogBoxSummaryComponent,
+    BoxPublishedComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import { DialogBoxSummaryComponent } from './dialog-box-summary/dialog-box-summa
     MatDialogModule,
     FormsModule,
     MatRadioModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

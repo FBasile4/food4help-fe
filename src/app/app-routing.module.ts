@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { WorkingActivityHomeComponent } from './working-activity-home/working-activity-home.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { SearchUsersComponent } from './search-users/search-users.component';
+import {BoxPublishedComponent} from './box-published/box-published.component';
 
 
 const routes: Routes = [
@@ -14,8 +15,10 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'home/login', component: LoginUserComponent },
   { path: 'home/searchUsers', component: SearchUsersComponent },
-  { path: 'home/register', component: CreateUserComponent },
+  { path: 'home/workingActivity/create', component: CreateUserComponent },
+  { path: 'home/charity/create', component: CreateUserComponent },
   { path: 'home/workingActivity', component: WorkingActivityHomeComponent },
+  { path: 'home/workingActivity/boxAvailable', component:  BoxPublishedComponent },
 ];
 
 @NgModule({

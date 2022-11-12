@@ -1,9 +1,7 @@
 import { Component,  OnInit } from '@angular/core';
 import {Location} from '@angular/common';
 import { FormControl, Validators } from '@angular/forms';
-import { MatFormFieldControl } from '@angular/material/form-field';
 
-import { Observable } from 'rxjs';
 import { UserServiceService } from '../user-service/user-service.service';
 import { Router } from '@angular/router';
 import { User } from '../user';
@@ -16,8 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class LoginUserComponent implements OnInit {
 
-  user: User;
-  userpwd: string;
+  userpwd: any;
 
   constructor(private _location: Location, private userService: UserServiceService, private router: Router,  private _snackBar: MatSnackBar) {
 
@@ -36,7 +33,7 @@ export class LoginUserComponent implements OnInit {
     this.router.navigate(['home']);
   }
   register(){
-    this.router.navigate(['home/register']);
+    this.router.navigate(['home/workingActivity/create']);
   }
   searchUsers(){
     this.router.navigate(['home/searchUsers']);
@@ -69,6 +66,7 @@ export class LoginUserComponent implements OnInit {
           userpwd => {
               if(userpwd !== null){
                 console.log(userpwd);
+                userpwd = this.userpwd;
                 this.goWorkingAct();
               }else{
                 console.log('Nessun utente presente nel DB');
