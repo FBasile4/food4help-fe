@@ -21,7 +21,6 @@
   <p class="question">Sei sicuro di voler confermare la creazione della box?</p>
 </div>
 <div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Indietro</button>
-  <!--LA CREAZIONE DELLA BOX DEVE AVVENIRE QUA COME FARE???????-->
+  <button mat-button (click)="backBox()" mat-dialog-close>Indietro</button>
   <button class="publish" mat-button mat-dialog-close>Pubblica</button>
 </div>

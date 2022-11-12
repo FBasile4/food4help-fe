@@ -51,6 +51,7 @@ export class WorkingActivityHomeComponent implements OnInit {
   openSummary(result: any){
     const dialogRef = this.dialog.open(DialogBoxSummaryComponent, {
       data: {
+        id: result.id,
         type: result.type,
         weight: result.weight,
         description: result.description,
