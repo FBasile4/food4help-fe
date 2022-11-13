@@ -26,13 +26,22 @@ export class UserServiceService {
     return this.http.post(`${this.baseUrl}` + `/home/workingActivity/create`, user);
   }
 
-  loginUser(userpwd: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/home/login/${userpwd}`);
-    if(this.http.get(`${this.baseUrl}/home/login/${userpwd}`) === null){
+  loginUserW(userpwd: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/home/workingActivity/login/${userpwd}`);
+    if(this.http.get(`${this.baseUrl}/home/workingActivity/login/${userpwd}`) === null){
       userpwd = '';
       console.log('Utente a NULL');
     }
   }
+
+  loginUserC(userpwd: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/home/charity/login/${userpwd}`);
+    if(this.http.get(`${this.baseUrl}/home/charity/login/${userpwd}`) === null){
+      userpwd = '';
+      console.log('Utente a NULL');
+    }
+  }
+
 
   getUsersByName(name: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/users/name/${name}`);

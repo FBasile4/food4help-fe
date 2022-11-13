@@ -14,6 +14,34 @@ img{
   width: 1536px;
   height: 627px;
 }
+.home .details{
+  color: #105B0E;
+  font-size: 167%;
+  text-align: end;
+  width: 1535px;
+  height: 589px;
+  line-height: 76px;
+  position: absolute;
+  top: 18%;
+  left: -6%;
+}
+.home .register {
+  position: absolute;
+  top: 71%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: darkgreen;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+
 
 
 

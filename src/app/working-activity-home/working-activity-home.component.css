@@ -21,7 +21,7 @@ h3{
 }
 .form{
   position:absolute;
-  top:190px;
+  top:210px;
   left:355px;
   color: black;
   font-size: 24px;
@@ -35,11 +35,11 @@ h3{
   max-width: 700px;
   width: 100%;
 }
-.form-weigth{
+.form-weight{
   display: flex;
   gap: 30px;
 }
-.input-weigth{
+.input-weight{
   min-width: 600px;
   max-width: 700px;
   width: 100%;
@@ -71,11 +71,11 @@ h3{
   max-width: 700px;
   width: 100%;
 }
-.form-zone{
+.form-owner{
   display: flex;
   gap: 59px;
 }
-.input-zone{
+.input-owner{
   min-width: 600px;
   max-width: 700px;
   width: 100%;

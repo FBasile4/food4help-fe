@@ -8,6 +8,7 @@ import { WorkingActivityHomeComponent } from './working-activity-home/working-ac
 import { CreateUserComponent } from './create-user/create-user.component';
 import { SearchUsersComponent } from './search-users/search-users.component';
 import {BoxPublishedComponent} from './box-published/box-published.component';
+import {CharityComponent} from './charity-home/charity.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'home/workingActivity/create', component: CreateUserComponent },
   { path: 'home/charity/create', component: CreateUserComponent },
   { path: 'home/workingActivity', component: WorkingActivityHomeComponent },
+  { path: 'home/charity', component: CharityComponent },
   { path: 'home/workingActivity/boxAvailable', component:  BoxPublishedComponent },
 ];
 

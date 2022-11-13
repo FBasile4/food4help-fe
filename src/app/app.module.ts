@@ -27,6 +27,7 @@ import { WorkingActivityHomeComponent } from './working-activity-home/working-ac
 import { CreateUserComponent } from './create-user/create-user.component';
 import { DialogBoxSummaryComponent } from './dialog-box-summary/dialog-box-summary.component';
 import { BoxPublishedComponent } from './box-published/box-published.component';
+import { CharityComponent } from './charity-home/charity.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { BoxPublishedComponent } from './box-published/box-published.component';
     WorkingActivityHomeComponent,
     CreateUserComponent,
     DialogBoxSummaryComponent,
-    BoxPublishedComponent
+    BoxPublishedComponent,
+    CharityComponent
   ],
   imports: [
     BrowserModule,

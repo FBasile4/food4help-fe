@@ -43,6 +43,10 @@ export class LoginUserComponent implements OnInit {
     this.router.navigate(['home/workingActivity']);
   }
 
+  goCharity(){
+    this.router.navigate(['home/charity']);
+  }
+
   stayLogin(){
     this.router.navigate(['home/login']);
   }
@@ -56,32 +60,51 @@ export class LoginUserComponent implements OnInit {
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
 
-  checkAccess(): void{
+  checkAccessWorkingAcivity(): void{
     console.log("Email", this.email.value);
     console.log("Password", this.password.value);
     if(this.email.value !== ' '){
       if(this.password.value !== ' '){
         this.userpwd = this.email.value + '_' + this.password.value;
-        this.userService.loginUser(this.userpwd).subscribe(
+        this.userService.loginUserW(this.userpwd).subscribe(
           userpwd => {
               if(userpwd !== null){
                 console.log(userpwd);
                 userpwd = this.userpwd;
                 this.goWorkingAct();
               }else{
-                console.log('Nessun utente presente nel DB');
-                this.openSnackBar();
+                this.checkAccessCharity();
+                console.log('Nessun utente WORKING presente nel DB');
               }
             },
             error => console.log(error)
         );
       }
+      this.openSnackBar();
     }
+    this.openSnackBar();
+  }
+
+  checkAccessCharity(){
+      this.userpwd = this.email.value + '_' + this.password.value;
+      this.userService.loginUserC(this.userpwd).subscribe(
+        userpwd => {
+          if(userpwd !== null){
+            console.log(userpwd);
+            userpwd = this.userpwd;
+            this.goCharity();
+          }else{
+            console.log('Nessun utente presente nel DB');
+            this.openSnackBar();
+          }
+        },
+        error => console.log(error)
+      );
   }
 
   openSnackBar() {
-    this._snackBar.open('I dati inseriti sono errati', 'X', {
-      duration: 6000,
+    this._snackBar.open('I dati inseriti sono errati o mancati', 'X', {
+      duration: 5000,
       verticalPosition: 'top',
     });
   }

@@ -34,7 +34,16 @@ export class SearchUsersComponent implements OnInit {
 
   private searchUsers() {
     this.userService.getUsersByName(this.name)
-      .subscribe(userList => this.userList = userList);
+      .subscribe(userList =>
+        {this.userList = userList;
+          if(this.userList.length === 0){
+            console.log("La lista NON HA ELEMENTI");
+          }else {
+            console.log("La lista ha:", this.userList);
+          }
+        }
+      );
+
   }
   onSubmit() {
     this.searchUsers();
