@@ -4,7 +4,6 @@ import { FormControl, Validators } from '@angular/forms';
 
 import { UserServiceService } from '../user-service/user-service.service';
 import { Router } from '@angular/router';
-import { User } from '../user';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -79,10 +78,12 @@ export class LoginUserComponent implements OnInit {
             },
             error => console.log(error)
         );
+      }else {
+        this.openSnackBar();
       }
+    }else {
       this.openSnackBar();
     }
-    this.openSnackBar();
   }
 
   checkAccessCharity(){

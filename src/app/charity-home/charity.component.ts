@@ -29,7 +29,7 @@ export class CharityComponent implements OnInit {
     this.router.navigate(['home']);
   }
   reservations(){
-
+    this.router.navigate(['home/charity/booking']);
   }
 
   stayHome(){

@@ -29,7 +29,7 @@
 <!--                -->
 <h3> Box prenotabili: </h3>
 <div class="searh-boxList">
-    <ul *ngFor="let box of boxes | async" >
+    <ul *ngFor="let box of boxes | async">
       <li class="single-box" (click)="detailsBox(box)" >
         <ng-container *ngIf="box.type == 'pasta'; else beef">
           <img src="https://static.xmenu.it/cache/products/30437/20180315_132252_w256_h256_cp.jpg">

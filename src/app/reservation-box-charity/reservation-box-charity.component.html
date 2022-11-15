@@ -1,0 +1,38 @@
+<div class="toolbar">
+  <mat-toolbar class="toolbar">
+    <button  mat-button [matMenuTriggerFor] ="menuHome">
+      <mat-icon>list</mat-icon>
+    </button>
+    <mat-menu #menuHome="matMenu" yPosition="below" xPosition="after">
+      <button mat-menu-item (click)="stayHome()">
+        Home
+      </button>
+      <button mat-menu-item (click)="booking()" >
+        Prenotazioni
+      </button>
+      <button mat-menu-item (click)="backHome()">
+        Logout
+      </button>
+    </mat-menu>
+    <span class="spacer"></span>
+    <button mat-button>
+      <mat-icon>search</mat-icon>
+    </button>
+    <nav>
+      <a>
+        <button mat-button class="accedi">Ciao!</button>
+      </a>
+    </nav>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</div>
+<!--                -->
+<h3> Prenotazioni: </h3> <br> <br>
+<div class="searh-boxList">
+  <ul *ngFor="let reservation of reservations | async" >
+    <li class="single-box" >
+      <label class="text">{{reservation.workingact}}</label> <button class="button"disabled><mat-icon>create</mat-icon></button>  <button class="button1" ><mat-icon>delete_outline</mat-icon></button>
+    </li>
+  </ul>
+</div>
+

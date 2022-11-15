@@ -9,6 +9,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { SearchUsersComponent } from './search-users/search-users.component';
 import {BoxPublishedComponent} from './box-published/box-published.component';
 import {CharityComponent} from './charity-home/charity.component';
+import {ReservationBoxCharityComponent} from './reservation-box-charity/reservation-box-charity.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'home/workingActivity', component: WorkingActivityHomeComponent },
   { path: 'home/charity', component: CharityComponent },
   { path: 'home/workingActivity/boxAvailable', component:  BoxPublishedComponent },
+  { path: 'home/charity/booking', component:  ReservationBoxCharityComponent },
 ];
 
 @NgModule({

@@ -1,0 +1,49 @@
+mat-toolbar toolbar{
+  height: 60px;
+  color: darkgreen;
+  display: initial;
+}
+
+.accedi{
+  color: darkgreen;
+}
+.spacer{
+  flex: 1 1 auto;
+}
+
+/*-----------------------*/
+h3{
+  position:absolute;
+  top:130px;
+  left:39px;
+  color: darkgreen;
+  font-size: 24px;
+}
+.searh-boxList{
+  position: absolute;
+  top: 183px;
+  left: 44px;
+}
+ul {
+  list-style-type: none
+}
+.single-box{
+  background: #AECA5B;
+  min-width: 1364px;
+  max-width: 900px;
+}
+.button{
+  font-size: smaller !important;
+  position: sticky;
+  left: 1328px;
+}
+.button1{
+  font-size:smaller !important;
+  position: sticky;
+  left: 1389px;
+}
+.text{
+  font-size: larger;
+  position: absolute;
+  left: 80px;
+}

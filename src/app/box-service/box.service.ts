@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 })
 export class BoxService {
 
-  private baseUrl = 'http://localhost:8080/api/boxms'; /*contiene la baseUrl corrispondente con il be*/
+  private baseUrl = 'http://localhost:8082/api/boxms'; /*contiene la baseUrl corrispondente con il be*/
 
   box: Box;
 

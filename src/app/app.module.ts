@@ -29,6 +29,7 @@ import { DialogBoxSummaryComponent } from './dialog-box-summary/dialog-box-summa
 import { BoxPublishedComponent } from './box-published/box-published.component';
 import { CharityComponent } from './charity-home/charity.component';
 import { DialogDetailsBoxComponent } from './dialog-details-box/dialog-details-box.component';
+import { ReservationBoxCharityComponent } from './reservation-box-charity/reservation-box-charity.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { DialogDetailsBoxComponent } from './dialog-details-box/dialog-details-b
     DialogBoxSummaryComponent,
     BoxPublishedComponent,
     CharityComponent,
-    DialogDetailsBoxComponent
+    DialogDetailsBoxComponent,
+    ReservationBoxCharityComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 <h2 mat-dialog-title>Dettagli box:</h2>
 <div mat-dialog-content>
-  <h1>Tipologia:</h1> {{type}}
+  <h1>Tipologia:</h1> <label  >{{type}}</label>
 </div>
 <div mat-dialog-content>
   <h1>Peso complessivo:</h1> {{weight}}
@@ -19,5 +19,5 @@
 </div>
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close>Indietro</button>
-  <button class="publish" mat-button mat-dialog-close>Prenota</button>
+  <button class="publish" mat-button mat-dialog-close (click)="reservationBox()">Prenota</button>
 </div>
