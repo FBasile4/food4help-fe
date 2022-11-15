@@ -1,0 +1,17 @@
+h2 {
+  color: darkgreen;
+  font-size: 24px;
+}
+h1{
+  color:black ;
+  font-size: 18px;
+}
+
+.mat-dialog-actions{
+  display: flex;
+  justify-content: flex-end;
+}
+.publish{
+  color: white;
+  background: darkgreen;
+}

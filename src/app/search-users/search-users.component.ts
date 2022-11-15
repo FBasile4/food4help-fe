@@ -33,7 +33,7 @@ export class SearchUsersComponent implements OnInit {
 //----------------
 
   private searchUsers() {
-    this.userService.getUsersByName(this.name)
+    this.userService.getUsersWorkingActivityByName(this.name)
       .subscribe(userList =>
         {this.userList = userList;
           if(this.userList.length === 0){

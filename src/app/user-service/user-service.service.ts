@@ -42,9 +42,12 @@ export class UserServiceService {
     }
   }
 
+  getUsersCharityByName(name: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/users/charity/name/${name}`);
+  }
 
-  getUsersByName(name: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/users/name/${name}`);
+  getUsersWorkingActivityByName(name: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/users/workingActivity/name/${name}`);
   }
 
 }

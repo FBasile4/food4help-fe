@@ -1,1 +1,59 @@
-<p>charity works!</p>
+<div class="toolbar">
+  <mat-toolbar class="toolbar">
+    <button  mat-button [matMenuTriggerFor] ="menuHome">
+      <mat-icon>list</mat-icon>
+    </button>
+    <mat-menu #menuHome="matMenu" yPosition="below" xPosition="after">
+      <button mat-menu-item (click)="stayHome()">
+        Home
+      </button>
+      <button mat-menu-item (click)="reservations()" >
+        Prenotazioni
+      </button>
+      <button mat-menu-item (click)="backHome()">
+        Logout
+      </button>
+    </mat-menu>
+    <span class="spacer"></span>
+    <button mat-button>
+      <mat-icon>search</mat-icon>
+    </button>
+    <nav>
+      <a>
+        <button mat-button class="accedi">Ciao!</button>
+      </a>
+    </nav>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</div>
+<!--                -->
+<h3> Box prenotabili: </h3>
+<div class="searh-boxList">
+    <ul *ngFor="let box of boxes | async" >
+      <li class="single-box" (click)="detailsBox(box)" >
+        <ng-container *ngIf="box.type == 'pasta'; else beef">
+          <img src="https://static.xmenu.it/cache/products/30437/20180315_132252_w256_h256_cp.jpg">
+        </ng-container>
+        <ng-template #beef>
+          <ng-container *ngIf="box.type == 'carne'; else vegetable">
+            <img src="https://dimages2.gazzettaobjects.it/files/og_thumbnail/uploads/2021/09/14/61f640dd5fc35.jpeg">
+          </ng-container>
+          <ng-template #vegetable>
+            <ng-container *ngIf="box.type == 'verdura'; else pizza">
+              <img src="https://media-assets.lacucinaitaliana.it/photos/61fb16daf9bff304ce3ec60f/16:9/w_2560%2Cc_limit/2021-anno-fao-frutta-e-verdura.jpg">
+            </ng-container>
+            <ng-template #pizza>
+              <ng-container *ngIf="box.type == 'Pizza'; else sweet">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/260px-Eq_it-na_pizza-margherita_sep2005_sml.jpg">
+              </ng-container>
+              <ng-template #sweet>
+                <img *ngIf="box.type == ('dolce')|| ('dolci') " src="https://wips.plug.it/cips/paginegialle.it/magazine/cms/2018/06/12958638_s-1.jpg?w=744&h=418&a=c">
+              </ng-template>
+            </ng-template>
+          </ng-template>
+        </ng-template>
+       <br>
+        <label class="text">{{box.type}} - {{box.owner}}</label>
+      </li>
+    </ul>
+</div>

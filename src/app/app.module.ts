@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ScrollingModule } from '@angular/cdk/scrolling';
-
+import {MatListModule} from '@angular/material/list';
 
 
 import { AppComponent } from './app.component';
@@ -28,6 +28,8 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { DialogBoxSummaryComponent } from './dialog-box-summary/dialog-box-summary.component';
 import { BoxPublishedComponent } from './box-published/box-published.component';
 import { CharityComponent } from './charity-home/charity.component';
+import { DialogDetailsBoxComponent } from './dialog-details-box/dialog-details-box.component';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { CharityComponent } from './charity-home/charity.component';
     CreateUserComponent,
     DialogBoxSummaryComponent,
     BoxPublishedComponent,
-    CharityComponent
+    CharityComponent,
+    DialogDetailsBoxComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,8 @@ import { CharityComponent } from './charity-home/charity.component';
     FormsModule,
     MatRadioModule,
     MatSnackBarModule,
-    ScrollingModule
+    ScrollingModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
