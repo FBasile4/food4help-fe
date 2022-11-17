@@ -19,7 +19,7 @@ export class ReservationService {
     return this.http.get(`${this.baseUrl}reservations`);
   }
 
-  /*backCreateBox(id: number){
-    return this.http.delete(`${this.baseUrl}/delete/${id}`, { responseType: 'text' });
-  }*/
+  deleteReservation(id: number){
+    return this.http.delete(`${this.baseUrl}delete/${id}`, { responseType: 'text' });
+  }
 }

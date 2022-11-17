@@ -1,11 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Output, EventEmitter, OnInit, Input} from '@angular/core';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs';
 import {Box} from '../box';
 import {BoxService} from '../box-service/box.service';
-import {DialogBoxSummaryComponent} from '../dialog-box-summary/dialog-box-summary.component';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogDetailsBoxComponent} from '../dialog-details-box/dialog-details-box.component';
+import {User} from '../user';
 
 @Component({
   selector: 'app-charity',
@@ -22,7 +22,9 @@ export class CharityComponent implements OnInit {
     for (let index = 0; index < 10000; index++) {
       this.getBoxAvailable();
     }
+
   }
+
 
   //--------------NAVIGATE-----------
   backHome(){

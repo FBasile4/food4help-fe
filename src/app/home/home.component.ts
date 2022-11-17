@@ -12,8 +12,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   searchUsers(){
     this.router.navigate(['home/searchUsers']);
   }
-  
+
 }

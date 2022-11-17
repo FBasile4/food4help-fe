@@ -1,6 +1,6 @@
 <h2 mat-dialog-title>Dettagli box:</h2>
 <div mat-dialog-content>
-  <h1>Tipologia:</h1> <label  >{{type}}</label>
+  <h1>Tipologia:</h1> {{type}}
 </div>
 <div mat-dialog-content>
   <h1>Peso complessivo:</h1> {{weight}}
@@ -15,7 +15,7 @@
   <h1>E-mail:</h1>
 </div>
 <div mat-dialog-content>
-  <h1>Sede del ritiro:</h1> {{owner}}
+  <h1>Sede del ritiro:</h1> <label>{{owner}}</label>
 </div>
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close>Indietro</button>

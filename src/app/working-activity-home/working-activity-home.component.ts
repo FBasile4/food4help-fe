@@ -14,12 +14,12 @@ import {Box} from '../box';
 export class WorkingActivityHomeComponent implements OnInit {
 
   box: Box = new Box();
-  @Input() userLog: string;
+
 
   constructor(private boxService: BoxService, private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    console.log(this.userLog);
+    
   }
 
 //--------------NAVIGATE-----------

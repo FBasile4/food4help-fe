@@ -1,4 +1,4 @@
-import { Component,  OnInit } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {Location} from '@angular/common';
 import { FormControl, Validators } from '@angular/forms';
 
@@ -14,7 +14,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class LoginUserComponent implements OnInit {
 
   userpwd: any;
-
   constructor(private _location: Location, private userService: UserServiceService, private router: Router,  private _snackBar: MatSnackBar) {
 
   }
@@ -69,7 +68,7 @@ export class LoginUserComponent implements OnInit {
           userpwd => {
               if(userpwd !== null){
                 console.log(userpwd);
-                userpwd = this.userpwd;
+                this.userpwd= userpwd;
                 this.goWorkingAct();
               }else{
                 this.checkAccessCharity();
@@ -92,7 +91,7 @@ export class LoginUserComponent implements OnInit {
         userpwd => {
           if(userpwd !== null){
             console.log(userpwd);
-            userpwd = this.userpwd;
+            this.userpwd = userpwd;
             this.goCharity();
           }else{
             console.log('Nessun utente presente nel DB');

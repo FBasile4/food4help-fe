@@ -3,6 +3,9 @@ import {Observable} from 'rxjs';
 import {Reservation} from '../reservation';
 import {Router} from '@angular/router';
 import {ReservationService} from '../reservation-service/reservation.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {MatDialog} from '@angular/material/dialog';
+import {CharityComponent} from '../charity-home/charity.component';
 
 @Component({
   selector: 'app-reservation-box-charity',
@@ -11,10 +14,9 @@ import {ReservationService} from '../reservation-service/reservation.service';
 })
 export class ReservationBoxCharityComponent implements OnInit {
 
-
   reservations: Observable<Reservation[]>;
 
-  constructor( private router: Router, private reservationService: ReservationService) { }
+  constructor( private router: Router, private reservationService: ReservationService, public dialog: CharityComponent) { }
 
   ngOnInit(): void {
     for (let index = 0; index < 10000; index++) {
@@ -39,13 +41,12 @@ export class ReservationBoxCharityComponent implements OnInit {
     this.reservations = this.reservationService.getReservations();
   }
 
-
-  /*deleteBox(id: number){
-    this.boxService.backCreateBox(id).subscribe(
-      data => {
-        console.log(data);
-        this.getBox();
-      },
-      error => console.log(error));
-  }*/
+  deleteReservation(id: number){
+      this.reservationService.deleteReservation(id).subscribe(
+        data => {
+          console.log(data);
+          this.getReservation();
+        },
+        error => console.log(error));
+  }
 }

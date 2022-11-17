@@ -34,18 +34,16 @@ export class DialogDetailsBoxComponent implements OnInit {
   reservationBox(){
     let res: any;
     res = this.reservation;
-    this.reservationService.newReservation(this.reservation)
+    res.idBox = this.id;
+    res.workingact = this.owner;
+    //res.charityact =
+    this.reservationService.newReservation(res)
       .subscribe( booking =>
           {
-            res = booking;
-            res.idBox = this.id;
-            res.workingact = this.owner;
-            //res.charityact =
-            booking = res;
             console.log(booking);
             this.openSnackBar();
             this.reservation=res;
-            console.log(this.reservation);
+            console.log("PRENOTAZIONE",this.reservation);
           },
           error => console.log(error));
     this.reservation = new Reservation();
