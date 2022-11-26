@@ -18,6 +18,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import {MatListModule} from '@angular/material/list';
 
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
+
+
 
 import { AppComponent } from './app.component';
 import { SearchUsersComponent } from './search-users/search-users.component';
@@ -30,7 +34,6 @@ import { BoxPublishedComponent } from './box-published/box-published.component';
 import { CharityComponent } from './charity-home/charity.component';
 import { DialogDetailsBoxComponent } from './dialog-details-box/dialog-details-box.component';
 import { ReservationBoxCharityComponent } from './reservation-box-charity/reservation-box-charity.component';
-import { DialogBookingComponent } from './dialog-booking/dialog-booking.component';
 
 
 @NgModule({
@@ -45,8 +48,7 @@ import { DialogBookingComponent } from './dialog-booking/dialog-booking.componen
     BoxPublishedComponent,
     CharityComponent,
     DialogDetailsBoxComponent,
-    ReservationBoxCharityComponent,
-    DialogBookingComponent
+    ReservationBoxCharityComponent
   ],
   imports: [
     BrowserModule,
@@ -66,9 +68,31 @@ import { DialogBookingComponent } from './dialog-booking/dialog-booking.componen
     MatRadioModule,
     MatSnackBarModule,
     ScrollingModule,
-    MatListModule
+    MatListModule,
+    SocialLoginModule //For google
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        plugin_name: 'put anything here',
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('979769705409-k121a2je2ipt973h44enjktudhp8qlj0.apps.googleusercontent.com'),
+          },
+          /*{
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('clientId')
+          }*/
+        ],
+        onError: (err) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -16,7 +16,7 @@ export class ReservationBoxCharityComponent implements OnInit {
 
   reservations: Observable<Reservation[]>;
 
-  constructor( private router: Router, private reservationService: ReservationService, public dialog: CharityComponent) { }
+  constructor( private router: Router, private reservationService: ReservationService) { }
 
   ngOnInit(): void {
     for (let index = 0; index < 10000; index++) {

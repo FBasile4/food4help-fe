@@ -1,10 +1,12 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import {Location} from '@angular/common';
 import { FormControl, Validators } from '@angular/forms';
 
 import { UserServiceService } from '../user-service/user-service.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {FacebookLoginProvider, SocialUser} from 'angularx-social-login';
+import {GoogleLoginProvider, SocialAuthService} from 'angularx-social-login';
 
 @Component({
   selector: 'app-login-user',
@@ -14,16 +16,41 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class LoginUserComponent implements OnInit {
 
   userpwd: any;
-  constructor(private _location: Location, private userService: UserServiceService, private router: Router,  private _snackBar: MatSnackBar) {
+
+  //socialUser!: SocialUser;
+
+  constructor( private _location: Location, private userService: UserServiceService, private router: Router,  private _snackBar: MatSnackBar/*,  private socialAuthService: SocialAuthService*/) {
 
   }
-
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required]);
   hide = true;
 
   ngOnInit(): void {
     this.userpwd = '';
+   /* this.socialAuthService.authState.subscribe((user) => {
+      this.socialUser = user;
+    });*/
+    // @ts-ignore
+    google.accounts.id.initialize({
+      client_id: "979769705409-k121a2je2ipt973h44enjktudhp8qlj0.apps.googleusercontent.com",
+      callback: this.handleCredentialResponse.bind(this),
+      auto_select: false,
+      cancel_on_tap_outside: true,
+    });
+    // @ts-ignore
+    google.accounts.id.renderButton(
+      // @ts-ignore
+      document.getElementById("google-button"),
+      { theme: "outline", size: "large", width: "100%" }
+    );
+    // @ts-ignore
+    google.accounts.id.prompt((notification: PromptMomentNotification) => {});
+  }
+  async handleCredentialResponse(response: any) {
+    // Here will be your response from Google.
+    console.log(response);
+    this.goCharity();
   }
   //----------NAVIGATE
   backHome() {
@@ -109,7 +136,13 @@ export class LoginUserComponent implements OnInit {
     });
   }
 
+  /*loginWithGoogle(): void {
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(x => console.log(x));
+  }
 
+  logOut(): void {
+    this.socialAuthService.signOut();
+  }*/
 
 
 }
