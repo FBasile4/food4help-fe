@@ -12,9 +12,11 @@ export class DialogBoxSummaryComponent implements OnInit {
 
   id: number;
   type: string;
-  weight: number;
+  weight: string;
   description: string;
-  owner: string
+  owner: string;
+  mail: string;
+  tel: string;
 
   constructor( public dialogRef: MatDialogRef<DialogBoxSummaryComponent>, @Inject(MAT_DIALOG_DATA) public data: Box, private boxService: BoxService) {
     this.id = data.id;
@@ -22,6 +24,8 @@ export class DialogBoxSummaryComponent implements OnInit {
     this.weight = data.weight;
     this.description = data.description;
     this.owner= data.owner;
+    this.mail =data.mail;
+    this.tel = data.tel;
   }
 
   ngOnInit(): void {

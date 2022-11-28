@@ -15,7 +15,7 @@ export class BoxService {
   constructor(private http: HttpClient) { }
 
   newBox(box: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}` + `/createBox`, box);
+    return this.http.post(`${this.baseUrl}` + `/create`, box);
   }
 
   getBoxList(): Observable<any> {

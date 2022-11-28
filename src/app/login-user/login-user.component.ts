@@ -7,6 +7,11 @@ import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {FacebookLoginProvider, SocialUser} from 'angularx-social-login';
 import {GoogleLoginProvider, SocialAuthService} from 'angularx-social-login';
+import {Observable} from 'rxjs';
+import {User} from '../user';
+import {WorkingActivityHomeComponent} from '../working-activity-home/working-activity-home.component';
+import {isBoolean, log} from 'util';
+import {exists} from 'fs';
 
 @Component({
   selector: 'app-login-user',
@@ -16,10 +21,9 @@ import {GoogleLoginProvider, SocialAuthService} from 'angularx-social-login';
 export class LoginUserComponent implements OnInit {
 
   userpwd: any;
-
   //socialUser!: SocialUser;
 
-  constructor( private _location: Location, private userService: UserServiceService, private router: Router,  private _snackBar: MatSnackBar/*,  private socialAuthService: SocialAuthService*/) {
+  constructor( private _location: Location, private userService: UserServiceService, private router: Router,  private _snackBar: MatSnackBar/*private socialAuthService: SocialAuthService*/) {
 
   }
   email = new FormControl('', [Validators.required, Validators.email]);
@@ -96,6 +100,9 @@ export class LoginUserComponent implements OnInit {
               if(userpwd !== null){
                 console.log(userpwd);
                 this.userpwd= userpwd;
+                this.userService.saveUserLogged(this.userpwd).subscribe(logged =>{
+                    console.log("Sono loggato:", logged)
+                } );
                 this.goWorkingAct();
               }else{
                 this.checkAccessCharity();
@@ -119,6 +126,9 @@ export class LoginUserComponent implements OnInit {
           if(userpwd !== null){
             console.log(userpwd);
             this.userpwd = userpwd;
+            this.userService.saveUserLogged(this.userpwd).subscribe(logged =>{
+              console.log("Sono loggato:", logged)
+            } );
             this.goCharity();
           }else{
             console.log('Nessun utente presente nel DB');

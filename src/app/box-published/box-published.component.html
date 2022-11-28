@@ -22,8 +22,8 @@
       <mat-icon>search</mat-icon>
     </button>
     <nav>
-      <a>
-        <button mat-button class="accedi">Ciao!</button>
+      <a *ngFor="let user of userLogged | async" >
+        <button mat-button class="accedi">Ciao {{user.name}}!</button>
       </a>
     </nav>
   </mat-toolbar>

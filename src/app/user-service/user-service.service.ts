@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {BehaviorSubject, Observable} from 'rxjs';
+import {Observable} from 'rxjs';
 import { User } from '../user';
-import {LoginUserComponent} from '../login-user/login-user.component';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +9,7 @@ import {LoginUserComponent} from '../login-user/login-user.component';
 export class UserServiceService {
 
   private baseUrl = 'http://localhost:8080/api/v1'; /*contiene la baseUrl corrispondente con il be*/
+  private baseUrl_UserLogged = 'http://localhost:8083/api/userlogged'; /*contiene la baseUrl corrispondente con il be*/
 
 
   user: User;
@@ -51,6 +51,20 @@ export class UserServiceService {
 
   getUsersWorkingActivityByName(name: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/users/workingActivity/name/${name}`);
+  }
+
+  //-------------------UserLogged----------------
+
+  saveUserLogged(user: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl_UserLogged }` + `/create`, user);
+  }
+
+  getUserLogged(): Observable<any>{
+    return this.http.get(`${this.baseUrl_UserLogged}/getuser`);
+  }
+
+  deleteUser(){
+    return this.http.delete(`${this.baseUrl_UserLogged}/delete`, { responseType: 'text' });
   }
 
 }

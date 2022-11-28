@@ -5,6 +5,9 @@ import { DialogBoxSummaryComponent } from '../dialog-box-summary/dialog-box-summ
 
 import {BoxService} from '../box-service/box.service';
 import {Box} from '../box';
+import {UserServiceService} from '../user-service/user-service.service';
+import {User} from '../user';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-working-activity-home',
@@ -14,16 +17,24 @@ import {Box} from '../box';
 export class WorkingActivityHomeComponent implements OnInit {
 
   box: Box = new Box();
+  userLogged: Observable<User[]>;
 
-
-  constructor(private boxService: BoxService, private router: Router, public dialog: MatDialog) { }
+  constructor(private boxService: BoxService, private router: Router, public dialog: MatDialog, private userService: UserServiceService) { }
 
   ngOnInit(): void {
-    
+    for (let index = 0; index < 1; index++) {
+      this.getUserLogged();
+    }
+  }
+
+  getUserLogged(){
+    this.userLogged = this.userService.getUserLogged();
+    console.log("SONO L'UTENTE LOGGATO");
   }
 
 //--------------NAVIGATE-----------
   backHome(){
+    this.userService.deleteUser().subscribe(data => console.log(data));
     this.router.navigate(['home']);
   }
   reservations(){
@@ -38,6 +49,7 @@ export class WorkingActivityHomeComponent implements OnInit {
     this.router.navigate(['home/workingActivity']);
   }
   //--------------------
+
 
   addBox(){
     this.boxService.newBox(this.box).subscribe(data =>
@@ -55,7 +67,9 @@ export class WorkingActivityHomeComponent implements OnInit {
         type: result.type,
         weight: result.weight,
         description: result.description,
-        owner: result.owner
+        owner: result.owner,
+        mail: result.mail,
+        tel: result.tel
       }
     });
   }

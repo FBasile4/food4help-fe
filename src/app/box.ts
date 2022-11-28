@@ -1,8 +1,10 @@
 export class Box {
   id: number;
   type: string;
-  weight: number;
+  weight: string;
   description: string;
   owner: string;
   available: boolean;
+  mail: string;
+  tel: string;
 }

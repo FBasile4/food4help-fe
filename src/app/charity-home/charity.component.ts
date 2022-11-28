@@ -6,6 +6,7 @@ import {BoxService} from '../box-service/box.service';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogDetailsBoxComponent} from '../dialog-details-box/dialog-details-box.component';
 import {User} from '../user';
+import {UserServiceService} from '../user-service/user-service.service';
 
 @Component({
   selector: 'app-charity',
@@ -16,7 +17,7 @@ export class CharityComponent implements OnInit {
 
   boxes: Observable<Box[]>;
 
-  constructor( private router: Router, private boxService: BoxService,  public dialog: MatDialog) { }
+  constructor( private router: Router, private boxService: BoxService,  public dialog: MatDialog, private userService: UserServiceService) { }
 
   ngOnInit(): void {
     for (let index = 0; index < 10000; index++) {
@@ -28,6 +29,7 @@ export class CharityComponent implements OnInit {
 
   //--------------NAVIGATE-----------
   backHome(){
+    this.userService.deleteUser().subscribe(data => console.log(data));
     this.router.navigate(['home']);
   }
   reservations(){
