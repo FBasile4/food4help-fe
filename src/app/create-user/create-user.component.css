@@ -38,15 +38,15 @@ h3{
   background: darkgreen;
   font-size: initial;
   position:absolute;
-  bottom: 167px;
-  left: 1104px;
+  bottom: 90px;
+  left: 1052px;
 }
 
 .form-group{
   display: flex;
   justify-content: center;
   position:absolute;
-  bottom: 210px;
+  bottom: 147px;
 }
 .form-name{
   display: flex;

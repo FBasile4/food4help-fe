@@ -5,13 +5,6 @@ import { FormControl, Validators } from '@angular/forms';
 import { UserServiceService } from '../user-service/user-service.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import {FacebookLoginProvider, SocialUser} from 'angularx-social-login';
-import {GoogleLoginProvider, SocialAuthService} from 'angularx-social-login';
-import {Observable} from 'rxjs';
-import {User} from '../user';
-import {WorkingActivityHomeComponent} from '../working-activity-home/working-activity-home.component';
-import {isBoolean, log} from 'util';
-import {exists} from 'fs';
 
 @Component({
   selector: 'app-login-user',
@@ -23,7 +16,7 @@ export class LoginUserComponent implements OnInit {
   userpwd: any;
   //socialUser!: SocialUser;
 
-  constructor( private _location: Location, private userService: UserServiceService, private router: Router,  private _snackBar: MatSnackBar/*private socialAuthService: SocialAuthService*/) {
+  constructor( private _location: Location, private userService: UserServiceService, private router: Router,  private _snackBar: MatSnackBar) {
 
   }
   email = new FormControl('', [Validators.required, Validators.email]);
@@ -115,6 +108,9 @@ export class LoginUserComponent implements OnInit {
         this.openSnackBar();
       }
     }else {
+      this.openSnackBar();
+    }
+    if(this.email.value === ' ' && this.password.value === ' '){
       this.openSnackBar();
     }
   }
