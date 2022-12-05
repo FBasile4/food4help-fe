@@ -47,7 +47,17 @@ export class LoginUserComponent implements OnInit {
   async handleCredentialResponse(response: any) {
     // Here will be your response from Google.
     console.log(response);
-    this.goCharity();
+    console.log(response.clientId);
+    this.userService.sendCredential(response.clientId).subscribe(result =>
+      {
+        if(result !== null ){
+          console.log(result);
+          this.goWorkingAct();
+        }else{
+          this.openSnackBar();
+        }
+      }, error => console.log(error) );
+
   }
   //----------NAVIGATE
   backHome() {
@@ -139,6 +149,7 @@ export class LoginUserComponent implements OnInit {
     this._snackBar.open('I dati inseriti sono errati o mancati', 'X', {
       duration: 5000,
       verticalPosition: 'top',
+      horizontalPosition: 'center',
     });
   }
 

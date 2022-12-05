@@ -67,4 +67,13 @@ export class UserServiceService {
     return this.http.delete(`${this.baseUrl_UserLogged}/delete`, { responseType: 'text' });
   }
 
+  //------------------LOGIN WITH GOOGLE-------------
+  sendCredential(credential: string): Observable<any>{
+    return this.http.get(`${this.baseUrl}/charity/login/google/${credential}`);
+    if(this.http.get(`${this.baseUrl}/charity/login/google/${credential}`) === null){
+      credential = '';
+      console.log('Utente a NULL');
+    }
+  }
+
 }

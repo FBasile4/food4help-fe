@@ -26,4 +26,6 @@ body{
   background: green;
   font-style: initial;
   color: white;
+  display: flex;
+  justify-content: center;
 }
