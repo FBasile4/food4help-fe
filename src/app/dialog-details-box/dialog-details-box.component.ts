@@ -14,7 +14,7 @@ import {ReservationService} from '../reservation-service/reservation.service';
 export class DialogDetailsBoxComponent implements OnInit {
   id: number;
   type: string;
-  weight: string;
+  weight: number;
   description: string;
   owner: string
 

@@ -1,7 +1,7 @@
 export class Box {
   id: number;
   type: string;
-  weight: string;
+  weight: number;
   description: string;
   owner: string;
   available: boolean;

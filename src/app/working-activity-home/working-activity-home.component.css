@@ -24,11 +24,11 @@ h3{
   top:210px;
   left:355px;
   color: black;
-  font-size: 24px;
+  font-size: 21px;
 }
 .form-type{
   display: flex;
-  gap: 72px;
+  gap: 70px;
 }
 .input-type {
   min-width: 600px;
@@ -37,7 +37,7 @@ h3{
 }
 .form-weight{
   display: flex;
-  gap: 30px;
+  gap: 88px;
 }
 .input-weight{
   min-width: 600px;
@@ -64,7 +64,7 @@ h3{
 }
 .form-email{
   display: flex;
-  gap: 106px;
+  gap: 98px;
 }
 .input-email{
   min-width: 600px;
@@ -73,7 +73,7 @@ h3{
 }
 .form-owner{
   display: flex;
-  gap: 59px;
+  gap: 54px;
 }
 .input-owner{
   min-width: 600px;

@@ -39,7 +39,7 @@
     </div>
     <br>
     <div class="form-weight">
-      <label>Peso complessivo:</label>
+      <label>Peso (kg):</label>
       <input class="input-weight" id="weight" [(ngModel)]="box.weight" required name="weight">
     </div>
     <br>
@@ -48,14 +48,14 @@
       <input class="input-details" id="details" [(ngModel)]="box.description" required name="details">
     </div>
     <br>
-    <div class="form-phone" *ngFor="let user of userLogged | async">
+    <div class="form-phone" >
       <label>Numero di telefono</label>
-      <input class="input-phone" id="phone" required name="phone"  [(ngModel)]="user.phone||box.tel">
+      <input class="input-phone" id="phone" required name="phone"  [(ngModel)]="box.tel">
     </div>
     <br>
-    <div class="form-email" *ngFor="let user of userLogged | async">
+    <div class="form-email" >
       <label>Email:</label>
-      <input class="input-email" id="email" required name="email"  [(ngModel)]="user.email||box.mail">
+      <input class="input-email" id="email" required name="email"  [(ngModel)]="box.mail">
     </div>
     <br>
     <div class="form-owner">

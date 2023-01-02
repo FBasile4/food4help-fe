@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
 })
 export class ReservationService {
 
-  private baseUrl = 'http://localhost:8081/api/reservations/'; /*contiene la baseUrl corrispondente con il be*/
+  private baseUrl = 'http://localhost:8083/api/reservations/'; /*contiene la baseUrl corrispondente con il be*/
 
   constructor(private http: HttpClient) { }
 

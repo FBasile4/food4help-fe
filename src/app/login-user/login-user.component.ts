@@ -114,15 +114,16 @@ export class LoginUserComponent implements OnInit {
             },
             error => console.log(error)
         );
-      }else {
+      }else{
         this.openSnackBar();
       }
-    }else {
+    }else{
       this.openSnackBar();
     }
-    if(this.email.value === ' ' && this.password.value === ' '){
+    if(this.email.value == ' ' && this.password.value == ' ') {
       this.openSnackBar();
     }
+
   }
 
   checkAccessCharity(){
@@ -149,7 +150,6 @@ export class LoginUserComponent implements OnInit {
     this._snackBar.open('I dati inseriti sono errati o mancati', 'X', {
       duration: 5000,
       verticalPosition: 'top',
-      horizontalPosition: 'center',
     });
   }
 

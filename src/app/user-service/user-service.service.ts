@@ -9,7 +9,7 @@ import { User } from '../user';
 export class UserServiceService {
 
   private baseUrl = 'http://localhost:8080/api/v1'; /*contiene la baseUrl corrispondente con il be*/
-  private baseUrl_UserLogged = 'http://localhost:8083/api/userlogged'; /*contiene la baseUrl corrispondente con il be*/
+  private baseUrl_UserLogged = 'http://localhost:8084/api/userlogged'; /*contiene la baseUrl corrispondente con il be*/
 
 
   user: User;
@@ -69,8 +69,8 @@ export class UserServiceService {
 
   //------------------LOGIN WITH GOOGLE-------------
   sendCredential(credential: string): Observable<any>{
-    return this.http.get(`${this.baseUrl}/charity/login/google/${credential}`);
-    if(this.http.get(`${this.baseUrl}/charity/login/google/${credential}`) === null){
+    return this.http.get(`${this.baseUrl}/workingactivity/login/google/${credential}`);
+    if(this.http.get(`${this.baseUrl}/workingactivity/google/${credential}`) === null){
       credential = '';
       console.log('Utente a NULL');
     }

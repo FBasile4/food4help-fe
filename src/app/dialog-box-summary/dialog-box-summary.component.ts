@@ -12,7 +12,7 @@ export class DialogBoxSummaryComponent implements OnInit {
 
   id: number;
   type: string;
-  weight: string;
+  weight: number;
   description: string;
   owner: string;
   mail: string;
